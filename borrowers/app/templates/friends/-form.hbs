@@ -1,0 +1,42 @@
+<div>
+
+    <h2>Friends details</h2>
+
+    <p>{{model.firstName}}</p>
+    <p>{{model.lastName}}</p>
+</div>
+
+<form  {{action "save" on="submit"}}>
+    <h3>{{errorMessage}}</h3>
+    <p>
+        <label>First name:
+          {{input value=model.firstName}}
+        </label>
+    </p>
+
+    <p>
+        <label>Last name:
+          {{input value=model.lastName}}
+        </label>
+    </p>
+    <p>
+        <label>Email:
+          {{input value=model.email}}
+        </label>
+    </p>
+    <p>
+        <label>Twitter:
+          {{input value=model.twitter}}
+        </label>
+    </p>
+    <p>
+         {{input type="checkbox" name=trusted}}hhh
+    </p>
+
+    <input type="submit" value="Save" />
+    <button {{action "cancel"}}>Cancel</button>
+
+
+
+
+</form>

@@ -1,0 +1,9 @@
+<h2>Friends index</h2>
+
+{{! Context here is the controler}}
+<h3> Total friends:{{model.length}}</h3>
+<ul>
+    {{#each model  as |friend|}}
+        <li>{{frends.id}} - {{friend.firstName}} {{friend.lastName}}</li>
+    {{/each}}
+</ul>
