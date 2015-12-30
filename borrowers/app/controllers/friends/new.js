@@ -8,15 +8,18 @@ export default Ember.Controller.extend({
     'model.twitter',
     {
       get(){
-        return !Ember.isEmpty(this.get('model.email')) &&
-          !Ember.isEmpty(this.get('model.firstName')) &&
-          !Ember.isEmpty(this.get('model.lastName')) &&
-          !Ember.isEmpty(this.get('model.twitter'))
+        console.log(this);
+        return !Ember.isEmpty(this.get('model.email'))
+          //&& !Ember.isEmpty(this.get('model.firstName'))
+          //&& !Ember.isEmpty(this.get('model.lastName'))
+          //&& !Ember.isEmpty(this.get('model.twitter'))
+        ;
       }
     }
   ),
   actions: {
     save(){
+      this.set('errorMessage','');
       if (this.get('isValid')) {
         this.get('model').save().then((friend) => {
           this.transitionToRoute('friends.show', friend);
@@ -32,7 +35,8 @@ export default Ember.Controller.extend({
       return false;
     },
     cancel(){
-      this.transit
+      this.set('errorMessage','');
+      this.transitionToRoute('friends');
       //console.log('+- cancel action in friends new controller');
 
       return false;
