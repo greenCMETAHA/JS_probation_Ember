@@ -3,22 +3,22 @@
 {{! Context here is the controler}}
 <h3> Total friends:{{model.length}}</h3>
 
-
-<ul>
-    {{#each model  as |friend|}}
-
-      {{!--
-        <li>
-          {{#link-to 'friends.show' friend}}
-            {{friend.firstName}} {{friend.lastName}}
-          {{/link-to}}
-        </li>  --}}
-        <li>
-          {{link-to friend.fullName 'friends.show' friend}}
-        </li>
-
-    {{/each}}
-</ul>
+  <table class="primary">
+      <thead>
+        <th>Name</th>
+        <th>Articles</th>
+        <th></th>
+      </thead>
+      <tbody>
+        {{#each model  as |friend|}}
+          <tr>
+              <td>{{link-to friend.fullName 'articles' friend}}</td>
+              <td>{{friend.totalArticles}}</td>
+              <td><a href="#" {{action 'delete' friend}}> delete the mutherfucker</a></td>
+          </tr>
+        {{/each}}
+      </tbody>
+  </table>
 
 {{outlet}}
 

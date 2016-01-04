@@ -5,13 +5,7 @@ export default Ember.Route.extend({
        return this.store.createRecord('friend');
   },
   actions: {
-    save(){
-      console.log('+- save action in bubbled up new ');
-
-
-      return true;
-    },
-    cancel(){
+     cancel(){
       console.log('+- cancel action in bubbled up new ');
 
       return true;

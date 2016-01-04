@@ -1,13 +1,16 @@
-<ul>
-    <li>id:{{model.id}}</li>
-    <li>First name:{{model.firstName}}</li>
-    <li>Laset name:{{model.lastName}}</li>
-    <li>email:{{model.email}}</li>
-    <li>Twitter:{{model.twitter}}</li>
-</ul>
+<div class="card friend-profile">
+  <p>{{model.firstName}}</p>
+    <p>{{model.lastName}}</p>
+    <p>{{model.email}}</p>
+    <p>{{model.twitter}}</p>
 
------
-{{#link-to 'friends'}}to list of friends{{/link-to}}
+    <p>{{link-to "Lend article" "articles.new"}}</p>
+    <p>{{link-to "Edit info" "friends.edit" model}}</p>
+    <p><a href="#" {{action "delete" model}}> delete </a></p>
+</div>
 
 
-{{outlet}}
+<div class="arlicles-container">
+  {{outlet}}
+</div>
+
